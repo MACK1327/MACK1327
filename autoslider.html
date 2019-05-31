@@ -1,0 +1,31 @@
+<!doctype>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slider</title>
+</head>
+<body>
+<div class="container">
+	
+<img src="a.jpg"/>
+
+</div>
+<script>
+	var img = document.querySelector("img");
+	var image =  ["a","b","c","d"];
+	function abc(){
+	
+	var i=1;
+	if(i<image.length){
+i++;
+}
+else{
+i=1;
+}
+img.src = image[i-1]+".jpg";
+setInterval(abc,1000);
+}
+window.onload="abc()"
+</script>
+</body>
+</html>>

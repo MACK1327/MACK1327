@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		div{
+			height:200px;
+			width: 200px;
+			background:tomato;
+			animation-name:move;
+			animation-duration: 5s;
+			animation-iteration-count: 3;
+			animation-direction: alternate-reverse;
+			/*animation-timing-function: linear;*/
+			position: absolute;
+			top:0;
+			left:0;
+		}
+		div:hover{
+			animation-play-state: paused;
+		}
+		/*@keyframes move{
+			from{
+				background:green;
+			}
+			to{
+				background:orange;
+			}
+		}*/
+		/*
+			margin X
+			translate
+			top,right,bottom,left
+		*/
+		@keyframes move{
+			0%{
+				background:green;
+				top:0;
+				left:0;
+			}
+			25%{
+				background:orange;
+				top:0;
+				left:100%;
+				transform: translateX(-100%);
+				border-radius: 50px;
+			}
+			50%{
+				background:navy;
+				top:100%;
+				left:100%;
+				transform: translate(-100%,-100%);
+				border-radius: 50%;
+			}
+			75%{
+				background:goldenrod;
+				top:100%;
+				left:0;
+				transform: translateY(-100%);
+				border-radius: 50px;
+			}
+			100%{
+				background:purple;
+				top:0;
+				left:0;
+			}
+		}
+	</style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

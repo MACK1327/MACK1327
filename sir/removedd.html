@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="abc">
+		<h1>Heading</h1>
+	</div>
+	<button onclick="abc()">Click</button>
+	<script>
+		function abc(){
+			var a = document.querySelector("h1");
+			var b = document.querySelector("#abc");
+			b.removeChild(a);
+		}
+	</script>
+
+</body>
+</html>

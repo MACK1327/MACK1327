@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+<script>
+	var s = 16;
+	function abc(){
+		
+		if (s<=50) {
+			
+document.querySelector("p").style.fontSize = s+"px";
+			s++;
+		}
+		var x = setTimeout(abc,200)
+	}
+	abc();
+</script>
+</body>
+</html>

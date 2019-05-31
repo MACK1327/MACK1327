@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .navbar{
+            background:#000;
+            padding:10px;
+            /* position: fixed;
+            width:100%;
+            top:0;
+            left:0; */
+        }
+        .navbar ul{
+            list-style-type: none;
+            margin:0;
+            padding:0;
+        }
+        .navbar ul li{
+            display: inline-block;
+        }
+        .navbar ul li a{
+            color:#fff;
+            padding:10px 20px;
+            display: block;
+        }
+        .dropdown{
+            position: absolute;
+            background:#000;
+            display: none;
+        }
+        .dropdown li{
+            display: block!important;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Blog</a></li>
+        <li class="drop"><a href="">Products</a>
+            <ul class="dropdown">
+                <li><a href="">Product 1</a></li>
+                <li><a href="">Product 1</a></li>
+                <li><a href="">Product 1</a></li>
+            </ul>
+        </li>
+        <li><a href="">Services</a></li>
+    </ul>
+</div>
+
+<div class="abc">
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+</div>
+
+    <script>
+        document.querySelector(".drop").addEventListener("mouseover",()=>{
+            document.querySelector(".dropdown").style.display="block";
+        })
+        document.querySelector(".drop").addEventListener("mouseout",()=>{
+            document.querySelector(".dropdown").style.display="none";
+        })
+
+        window.onscroll = function(){
+            var x = window.pageYOffset;
+            if(x>0){
+                document.querySelector(".navbar").style.position = 'fixed';
+                document.querySelector(".navbar").style.width = '100%';
+                document.querySelector(".navbar").style.top = '0';
+                document.querySelector(".navbar").style.left = '0';
+            }
+            else{
+                document.querySelector(".navbar").style.position = 'static';
+            }
+        }
+    </script>
+</body>
+</html>

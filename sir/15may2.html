@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="a()">Alert</button>
+<button onclick="b()">Confirm</button>
+<button onclick="c()">Prompt</button>
+
+<script>
+    function a(){
+        alert('Message');
+    }
+    function b(){
+        if(confirm("You are being redirected")){
+            window.location.href="https://www.google.com"
+        }
+        else{
+            alert("You pressed cancel");
+        }
+    }
+    function c(){
+        var x = parseInt(prompt("Message"));
+        alert(x+10);
+    }
+</script>
+
+</body>
+</html>

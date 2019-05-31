@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body{
+			background:#000;
+			text-align: center;
+		}
+		.one{
+			background:#00a4e4;
+			color:#fff;
+			border:none;
+			font-size:18px;
+			padding:10px 20px;
+			position: relative;
+			overflow: hidden;
+		}
+		.two{
+			margin:20px;
+			background:transparent;
+			border:2px solid #fff;
+			color:#fff;
+			padding:10px 20px;
+			position: relative;
+		}
+		.two::before{
+			content:'';
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:0%;
+			background:#00a4e4;
+			z-index:-1;
+			transition: 1s;
+		}
+		.two:hover::before{
+			height:100%;
+		}
+
+		.one::before{
+			content:'';
+			background:linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent);
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			transform: translateX(-100%);
+			transition: 1s;
+		}
+		.one:hover::before{
+			transform: translateX(100%);
+		}
+
+	</style>
+</head>
+<body>
+	
+<button class="one">Button</button>
+<div class="box">
+<button class="two">Button</button>
+</div>
+
+</body>
+</html>

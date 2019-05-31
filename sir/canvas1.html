@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+	canvas{
+		border: 1px solid#333;
+	}
+</style>
+<body>
+	<canvas></canvas>
+<script>
+	var canvas = document.querySelector("canvas");
+	var height = window.innerHeight-25;
+	var width =window.innerWidth-25;
+	var c = canvas.getContext('2d');
+	 c.fillStyle = "red";
+    c.fillRect(100,100,200,100);
+    c.beginPath();
+     c.moveTo(400,300);
+    x --> left to right
+     y --> top,bottom
+    
+    c.lineTo(400,500);
+    c.lineTo(600,500);
+    c.lineTo(400,300);
+    c.strokeStyle = "red";
+    c.stroke();
+
+</script>
+</body>
+</html>

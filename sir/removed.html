@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="abd">
+		<h1>Heading</h1>
+	</div>
+	<button onclick="abc()">Click</button>
+	<script>
+		function abc(){
+		var a = document.querySelector("h1");
+		var b = document.querySelector("#abd");
+		var c = document.createElement("p");
+		var d = document.createTextNode("JavaScript");
+		c.appendChild(d);
+		b.replaceChild(c,a);
+	}
+	</script>
+
+</body>
+</html>

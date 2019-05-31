@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button{
+            background:#000;
+            border:none;
+            padding:10px 20px;
+            color:#fff;
+        }
+        .active{
+            background:tomato;
+        }
+        #specifications,#highlights{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+<button class="active" onclick="tabs(this)">Description</button>
+<button onclick="tabs(this)">Specifications</button>
+<button onclick="tabs(this)">Highlights</button>
+
+<div id="description">
+    <h1>Description</h1>
+    <p>&Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis obcaecati magni, voluptatem nobis voluptatum perspiciatis ipsa dolores enim officiis optio. Corrupti nobis harum animi libero sint id nihil fugit ducimus?</p>
+    <p>&Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis obcaecati magni, voluptatem nobis voluptatum perspiciatis ipsa dolores enim officiis optio. Corrupti nobis harum animi libero sint id nihil fugit ducimus?</p>
+    <p>&Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis obcaecati magni, voluptatem nobis voluptatum perspiciatis ipsa dolores enim officiis optio. Corrupti nobis harum animi libero sint id nihil fugit ducimus?</p>
+</div>
+<div id="specifications">
+    <h1>Specifications</h1>
+    <table border="2">
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+        </tr>
+    </table>
+</div>
+<div id="highlights">
+    <h1>Highlights</h1>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+</div>
+
+<script>
+function tabs(obj){
+    // console.log(obj.innerHTML.toLowerCase());
+    // Access button label
+    var id = obj.innerHTML.toLowerCase();
+
+    // Access all divs
+    var divs = document.querySelectorAll("div");
+    // divs[0].style.display = "none"
+    // divs[0].style.display = "none"
+    // divs[0].style.display = "none"
+
+    // Hide all divs
+    divs.forEach(function(value,index){
+        value.style.display="none";
+        // divs[index].style.display="none";
+    })
+
+    // display the current div
+    document.querySelector("#"+id).style.display = "block";
+
+    // Access all buttons
+    var btns = document.querySelectorAll("button");
+    // btns[0].className = "";
+    // btns[1].className = "";
+    // btns[2].className = "";
+
+    // Hide All Buttons
+    btns.forEach(function(item,key){
+        item.className="";
+    })
+
+    // toggle active on current button
+    obj.className = "active";
+}
+</script>
+
+</body>
+</html>

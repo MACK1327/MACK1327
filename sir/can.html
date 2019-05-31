@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        canvas{
+            border:1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    
+<canvas></canvas>
+
+<script>
+    var canvas = document.querySelector("canvas");
+    canvas.height = window.innerHeight-25; 
+    canvas.width = window.innerWidth-25;
+    var c = canvas.getContext('2d')
+    // c.fillStyle = "red";
+    // c.fillRect(100,100,200,100);
+    // c.beginPath();
+    // c.moveTo(400,300);
+    // x --> left to right
+    // y --> top,bottom
+    
+    // c.lineTo(400,500);
+    // c.lineTo(600,500);
+    // c.lineTo(400,300);
+    // c.strokeStyle = "red";
+    // c.stroke();
+    // window.onresize = function(){
+    //     console.log("Height", window.innerHeight);
+    //     console.log("Width", window.innerWidth);
+    // }
+    
+//     for(var i=1;i<=100;i++){
+//     var x = Math.random()*(window.innerWidth-25);
+//     var y = Math.random()*(window.innerHeight-25);
+//     var radius = Math.random()*30;
+//     var red= Math.round(Math.random()*255);
+//     var green = Math.round(Math.random()*255);
+//     var blue =Math.round(Math.random()*255);
+//     var a = Math.random();
+//     var color = `rgba(${red},${green},${blue},${a})`;
+//     c.beginPath();
+//     c.arc(x,y,radius,0,Math.PI*2,false);
+//     c.fillStyle = color;
+//     // c.strokeStyle="black";
+//     c.fill();
+//     // c.stroke();
+//     x+=10;
+//     y+=2;
+// }
+// setInterval(()=>{
+//     window.location.reload();
+// },100)
+var cursor = {
+    x:undefined,
+    y:undefined
+}
+window.addEventListener('mousemove',function(e){
+    console.log(e);
+    cursor.x = e.x;
+    cursor.y = e.y;
+})
+window.addEventListener('resize',function(){
+    canvas.height = window.innerHeight-25; 
+    canvas.width = window.innerWidth-25;
+})
+function Ball(x,y,dx,dy,radius,color){
+    this.x = x;
+    this.y = y;
+    this.dx = dx;
+    this.dy = dy;
+    this.radius = radius;
+    this.color = color;
+    this.make = function(){
+        c.beginPath();
+        c.arc(this.x,this.y,this.radius,0,Math.PI*2);
+        c.strokeStyle = this.color;
+        c.stroke();
+    }
+    this.move = function(){
+        if(this.x+this.radius>window.innerWidth-25 || this.x-this.radius<0){
+            this.dx = -this.dx;
+        }
+        if(this.y+this.radius>window.innerHeight-25 || this.y-this.radius<0){
+            this.dy = -this.dy;
+        }
+        if(cursor.x - this.x < 50 && cursor.x - this.x > -50 && cursor.y - this.y < 50 && cursor.y - this.y > -50){
+            this.x = cursor.x;
+             this.y = cursor.y;
+            this.radius+=10;
+        }
+        this.make();
+        // this.x+=this.dx;
+        // this.y+=this.dy;
+    }
+}
+var arr = [];
+for(var i =1;i<=100;i++){
+    var x = Math.random()*(window.innerWidth-25);
+    var y = Math.random()*(window.innerHeight-25);
+    var dx = Math.random()*8;
+    var dy = Math.random()*8;
+    var radius = Math.random()*30;
+    var red= Math.round(Math.random()*255);
+    var green = Math.round(Math.random()*255);
+    var blue =Math.round(Math.random()*255);
+    arr.push(new Ball(x,y,dx,dy,radius,`rgb(${red},${green},${blue})`));
+}
+
+function animate(){
+    c.clearRect(0,0,window.innerWidth-25,window.innerHeight-25)
+    requestAnimationFrame(animate);
+    arr.forEach(function(item,key){
+        item.move();
+    })
+}
+animate();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+    margin:10px;
+}
+    </style>
+</head>
+<body>
+
+<form action="file2.html" onsubmit="return validate()">
+    <label>Username*</label>
+    <input type="text" placeholder="Username" id="user">
+    <span id="usermsg">Enter a Username</span>
+    <br>
+    <input type="password" placeholder="Password" id="pwd">
+    <span id="pwdmsg"></span>
+    <br>
+    <input type="password" placeholder="Confirm Password" id="cpwd">
+    <span id="cpwdmsg"></span>
+    <br>
+    <input type="text" placeholder="number" id="num">
+    <span id="nummsg"></span>
+    <br>
+    <input type="text" placeholder="Email" id="email">
+    <span id="emailmsg"></span>
+    <br>
+    <input type="submit" value="Sign Up"/>
+</form>
+
+<script>
+    function _(x){
+        return document.querySelector(x)
+    }
+    function validate(){
+        var user = _("#user").value;
+        var pwd = _("#pwd").value;
+        var cpwd = _("#cpwd").value;
+        var num = _("#num").value;
+        var email = _("#email").value;
+        var atpos = email.indexOf('@');
+        var atpos2 = email.lastIndexOf('@');
+        var dotpos = email.lastIndexOf('.');
+        if(user==""){
+            _("#usermsg").innerHTML = "Enter a username";
+            return false;
+        }
+        else if(user.length < 6 || user.length > 20){
+            _("#usermsg").innerHTML = "Enter a username between 6 to 20 chars";
+            return false;
+        }
+        else{
+            _("#usermsg").innerHTML = "";
+        }
+        if(pwd==""){
+            _("#pwdmsg").innerHTML = "Enter a password";
+            return false;
+        }
+        else if(pwd.length<6 || pwd.length>20){
+                _("#pwdmsg").innerHTML = "Enter a password between 6 to 20 chars";
+            return false;
+        }
+        else{
+            _("#pwdmsg").innerHTML = "";
+        }
+        if(cpwd==""){
+            _("#cpwdmsg").innerHTML = "Enter a password again";
+            return false;
+        }
+        else if(cpwd!=pwd){
+            _("#cpwdmsg").innerHTML = "Password does not match";
+            return false;
+        }
+        else{
+            _("#cpwdmsg").innerHTML = "";
+        }
+        if(num==""){
+            _("#nummsg").innerHTML = "Enter a Mobile Number";
+            return false;
+        }
+        else if(isNaN(num)){
+            _("#nummsg").innerHTML = "Enter digits only";
+            return false;
+        }
+        else if(num.length!=10){
+            _("#nummsg").innerHTML = "Enter 10 digit number only";
+            return false;
+        }
+        if(email==""){
+            _("#emailmsg").innerHTML = "Enter an email";
+            return false;
+        }
+        else if(atpos<5){
+            _("#emailmsg").innerHTML = "Enter a valid email";
+            return false;
+        }
+        else if(atpos!=atpos2){
+            _("#emailmsg").innerHTML = "Multiple @ encountered";
+            return false;
+        }
+        else if((dotpos-atpos)<4){
+            _("#emailmsg").innerHTML = "Enter a valid email address";   
+            return false;
+        }
+    }
+
+    // setTimeout(()=>{
+    //     _("#usermsg").innerHTML = "";
+    // },3000)
+
+</script>
+
+</body>
+</html>

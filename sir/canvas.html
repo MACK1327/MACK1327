@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        canvas{
+            border:1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    
+<canvas></canvas>
+
+<script>
+    var canvas = document.querySelector("canvas");
+    canvas.height = window.innerHeight-25; 
+    canvas.width = window.innerWidth-25;
+    var c = canvas.getContext('2d')
+    // c.fillStyle = "red";
+    // c.fillRect(100,100,200,100);
+    // c.beginPath();
+    // c.moveTo(400,300);
+    // x --> left to right
+    // y --> top,bottom
+    
+    // c.lineTo(400,500);
+    // c.lineTo(600,500);
+    // c.lineTo(400,300);
+    // c.strokeStyle = "red";
+    // c.stroke();
+    // window.onresize = function(){
+    //     console.log("Height", window.innerHeight);
+    //     console.log("Width", window.innerWidth);
+    // }
+    
+    for(var i=1;i<=100;i++){
+    var x = Math.random()*(window.innerWidth-25);
+    var y = Math.random()*(window.innerHeight-25);
+    var radius = Math.random()*30;
+    var red= Math.round(Math.random()*255);
+    var green = Math.round(Math.random()*255);
+    var blue =Math.round(Math.random()*255);
+    var color = `rgb(${red},${green},${blue})`;
+    c.beginPath();
+    c.arc(x,y,radius,0,Math.PI*2,false);
+    c.fillStyle = color;
+    // c.strokeStyle="black";
+    c.fill();
+    // c.stroke();
+    x+=10;
+    y+=2;
+}
+setInterval(()=>{
+    window.location.reload();
+},100)
+
+</script>
+
+</body>
+</html>

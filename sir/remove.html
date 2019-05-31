@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="abc">
+	<h1>Head</h1>
+</div>
+<button onclick="abc()">Dleate</button>
+<script>
+	function abc(){
+		var x = document.querySelector("h1");
+		var y = document.querySelector("#abc");
+		var z = document.createElement("p");
+		var a = document.createTextNode("Maksood");
+		z.appendChild(a);
+		y.replaceChild(z,x);
+	}
+</script>
+</body>
+</html>

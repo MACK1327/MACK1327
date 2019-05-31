@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		}
+		.navbar ul{
+			list-style: none;
+			margin:0;
+			padding:0;
+			background:#000;
+		
+		}
+		.navbar ul li{
+			display: inline-block;
+		}
+		.navbar ul li a{
+			color:#fff;
+			text-decoration: none;
+			font-size:20px;
+			padding:10px 30px;
+			display: block;
+		}
+		.navbar ul li a:hover{
+			background-color: yellow;
+		}
+		.navbar ul ul{
+			position: absolute;
+			padding-left:20px;
+			display: none;
+		}
+		.navbar ul ul li{
+			padding:10px 20px;
+			color:#fff;
+			display: block;
+		}
+		.drop:hover ul{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+
+<div class="navbar">
+	<ul>
+		<li><a href="">Home</a></li>
+		<li class="drop"><a href="">Products</a>
+			<ul>
+				<li>Link 1</li>
+				<li>Link 2</li>
+				<li>Link 3</li>
+			</ul>
+		</li>
+		<li><a href="">About</a></li>
+		<li><a href="">Contact</a></li>
+	</ul>
+</div>
+
+
+
+</body>
+</html>

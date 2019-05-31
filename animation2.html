@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		div{
+			height: 200px;
+			width: 200px;
+			background:#262626;
+			animation-name:move;
+			position: absolute;
+			animation-duration: 7s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+
+
+		}
+		@keyframes move{
+			0%{
+				background:powderblue;
+				top: 0;
+				left:0;
+
+			}
+			40%{
+				background:white;
+				top:0;
+				left:25%; 
+				
+			}
+			70%{
+				background:white;
+				top: 0;
+				left:70%
+				transform:translateX(-100%);
+			}
+			100%{
+				background:blue;
+				top: 0;
+				left:100%;
+				transform:translateX(-100%);
+
+
+			}
+		}
+
+	</style>
+</head>
+<body>
+<div>
+
+</div>
+</body>
+</html>
